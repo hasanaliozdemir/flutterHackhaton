@@ -6,6 +6,7 @@ import 'package:flutter_app/core/components/passwordInput.dart';
 import 'package:flutter_app/core/components/textInput.dart';
 import 'package:flutter_app/services/validationService.dart';
 import 'package:flutter_app/services/wrapper.dart';
+import 'package:flutter_app/view/auth/gather_info_page.dart';
 import 'package:get/route_manager.dart';
 
 class AuthPage extends StatefulWidget {
@@ -93,7 +94,7 @@ class _AuthPageState extends State<AuthPage> with TickerProviderStateMixin {
 
   register() {
     FirebaseAuth.instance.createUserWithEmailAndPassword(email: _emailController.text, password: _passwordController.text);
-    (FirebaseAuth.instance.currentUser !=null)? Get.to(()=>Wrapper()) : Get.snackbar("Error", "Please try again");
+    (FirebaseAuth.instance.currentUser !=null)? Get.to(()=>RegisterInfoPage(user: FirebaseAuth.instance.currentUser!,)) : Get.snackbar("Error", "Please try again");
   }
   
   login(){
