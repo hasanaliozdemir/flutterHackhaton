@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/view/homepage/homepage.dart';
+import 'package:flutter_app/view/profile/profile_page.dart';
 import 'package:get/route_manager.dart';
 
 class CustomBottomBar extends StatelessWidget {
@@ -44,7 +45,7 @@ class CustomBottomBar extends StatelessWidget {
                 Get.to(()=>HomePage(),fullscreenDialog: true);
                 break;
               case 3:
-                Get.to(()=>HomePage(),fullscreenDialog: true);
+                Get.to(()=>ProfilePage(),fullscreenDialog: true);
                 break;
               
               default:
