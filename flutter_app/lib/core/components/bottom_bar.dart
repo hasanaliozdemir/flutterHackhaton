@@ -5,7 +5,8 @@ import 'package:get/route_manager.dart';
 
 class CustomBottomBar extends StatelessWidget {
   final int index;
-  CustomBottomBar({ Key? key,required this.index });
+  // ignore: use_key_in_widget_constructors
+  const CustomBottomBar({ Key? key,required this.index });
 
   @override
   Widget build(BuildContext context) {
