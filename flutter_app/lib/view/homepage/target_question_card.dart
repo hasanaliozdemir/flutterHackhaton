@@ -16,7 +16,7 @@ class TargetQuestionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 124,
+      height: 144,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         color: blue700.withOpacity(0.6),
