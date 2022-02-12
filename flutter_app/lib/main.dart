@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/services/wrapper.dart';
 import 'package:flutter_app/view/homepage/homepage.dart';
 import 'package:get/route_manager.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'firebase_options.dart';
 
@@ -32,6 +33,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        fontFamily: "Roboto",
         bottomNavigationBarTheme: BottomNavigationBarTheme.of(context),
         primarySwatch: Colors.blue,
       ),
