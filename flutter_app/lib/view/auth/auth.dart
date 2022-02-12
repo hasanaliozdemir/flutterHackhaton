@@ -1,9 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/core/colors.dart';
 import 'package:flutter_app/core/components/butonMini.dart';
 import 'package:flutter_app/core/components/passwordInput.dart';
 import 'package:flutter_app/core/components/textInput.dart';
 import 'package:flutter_app/services/validationService.dart';
+import 'package:flutter_app/services/wrapper.dart';
+import 'package:get/route_manager.dart';
 
 class AuthPage extends StatefulWidget {
   AuthPage({Key? key}) : super(key: key);
@@ -88,7 +91,15 @@ class _AuthPageState extends State<AuthPage> with TickerProviderStateMixin {
     );
   }
 
-  register() {}
+  register() {
+    FirebaseAuth.instance.createUserWithEmailAndPassword(email: _emailController.text, password: _passwordController.text);
+    (FirebaseAuth.instance.currentUser !=null)? Get.to(()=>Wrapper()) : Get.snackbar("Error", "Please try again");
+  }
+  
+  login(){
+    FirebaseAuth.instance.signInWithEmailAndPassword(email: _emailController.text, password: _passwordController.text);
+    (FirebaseAuth.instance.currentUser !=null)? Get.to(()=>Wrapper()) : Get.snackbar("Error", "Please try again");
+  }
 
   _buildExtraPart() {
     return Padding(
@@ -136,7 +147,7 @@ class _AuthPageState extends State<AuthPage> with TickerProviderStateMixin {
     } else {
       if (validationService.passwordValidaton(_passwordController.text) &&
           validationService.emailValidation(_emailController.text)) {
-        register();
+        login();
       } else {
         setState(() {
           _passwordError =
