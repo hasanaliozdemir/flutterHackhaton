@@ -1,6 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/view/homepage/homepage.dart';
+import 'package:flutter_app/view/lessonspage/lessons_page.dart';
 import 'package:flutter_app/view/profile/profile_page.dart';
+import 'package:flutter_app/view/questionsPage/questions_page.dart';
 import 'package:get/route_manager.dart';
 
 class CustomBottomBar extends StatelessWidget {
@@ -22,12 +25,12 @@ class CustomBottomBar extends StatelessWidget {
           icon: Icon(Icons.home_outlined)
         ),
         BottomNavigationBarItem(
-          label: "Page 2",
+          label: "Ders&Soru",
           icon: Icon(Icons.feed_outlined)
         ),
         BottomNavigationBarItem(
-          label: "Page 3",
-          icon: Icon(Icons.home)
+          label: "Soru Sor",
+          icon: Icon(CupertinoIcons.question)
         ),
         BottomNavigationBarItem(
           label: "Profile",
@@ -40,10 +43,10 @@ class CustomBottomBar extends StatelessWidget {
                 Get.off(()=>HomePage(),fullscreenDialog: true);
                 break;
               case 1:
-                Get.to(()=>HomePage(),fullscreenDialog: true);
+                Get.to(()=>LessonAndQuestionPage(),fullscreenDialog: true);
                 break;
               case 2:
-                Get.to(()=>HomePage(),fullscreenDialog: true);
+                Get.to(()=>QuestionsPage(),fullscreenDialog: true);
                 break;
               case 3:
                 Get.to(()=>ProfilePage(),fullscreenDialog: true);
