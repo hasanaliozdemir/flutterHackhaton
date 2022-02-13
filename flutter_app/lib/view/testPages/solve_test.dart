@@ -2,9 +2,11 @@ import 'package:checkbox_grouped/checkbox_grouped.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/core/components/butonMini.dart';
+import 'package:flutter_app/view/homepage/homepage.dart';
 import 'package:flutter_app/view/testPages/fullScreenQuestion.dart';
 import 'package:flutter_app/view/testPages/test_data.dart';
 import 'package:get/route_manager.dart';
+import 'package:kartal/kartal.dart';
 
 import '../../core/colors.dart';
 
@@ -103,5 +105,82 @@ class _SolveTestState extends State<SolveTest> {
     );
   }
 
-  finishTest() {}
+  finishTest() {
+    showDialog(context: context, builder: (BuildContext context){
+      return Material(
+        color: Colors.transparent,
+        child: Center(
+          child: Container(
+            width: 352,
+            height:400,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              color: white,
+              border: Border.all(width:2,color: blue500)
+            ),
+            child: Column(
+              children: [
+                SizedBox(height: 16,),
+                Text("Sonuçlar", style: TextStyle(
+                  color: blue500,
+                  fontSize: 24,
+                  fontWeight: FontWeight.w400
+                ),),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                  child: Container(
+                    height:250,
+                    
+                    decoration: BoxDecoration(
+                      color: blue100.withOpacity(0.4)
+                    ),
+                    child: ListView.builder(
+                      itemCount: testData[0].questions.length,
+                      itemBuilder: (context,index){
+                        return ListTile(
+                          title: Text("Soru ${index+1}"),
+                          trailing: _buildLeading(index),
+                        );
+                      },
+                    ),
+                  ),
+                ),
+                SizedBox(height: 8,),
+                Center(
+                  child: ButtonMini.active(text: "Tamam", onPressed: (){
+                    Navigator.pop(context);
+                    Get.to(()=>HomePage());
+                  }),
+                )
+              ],
+            ),
+          ),
+        ),
+      );
+    }); 
+  }
+
+  _buildLeading(index){
+    if (testData[0].questions[index].answer == answers[index]) {
+      
+      return Text("Doğru",style: TextStyle(color: Colors.green),);
+    } else {
+      return Text(_returnLetter(index),style: TextStyle(color: Colors.red),);
+    }
+  }
+
+  _returnLetter(i){
+    switch (i) {
+      case 0:
+        return "A";
+      case 1:
+        return "B";
+              case 2:
+        return "C";
+              case 3:
+        return "D";
+      default:
+      return "Boş";
+    }
+  }
 }
