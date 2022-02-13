@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/core/colors.dart';
+import 'package:flutter_app/view/lessonspage/view_lesson.dart';
+import 'package:flutter_app/view/profile/categorysTest.dart';
+import 'package:flutter_app/view/profile/missinglessons.dart';
+import 'package:get/route_manager.dart';
 
 class LessonCard extends StatelessWidget {
   final int index;
@@ -17,17 +21,25 @@ class LessonCard extends StatelessWidget {
                   color: blue500,
                   fontSize: 24
                 ),),
-            Container(
-              width: 120,
-              height: 120,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(24), 
-                  color: blue700.withOpacity(0.5),
-                  image: DecorationImage(
-                    image: AssetImage(_returnPath()),
-                    opacity: 1
-                  )
-                  ),
+            GestureDetector(
+              onTap: () {
+                Get.to(()=>ViewLesson(category: testCategories[index-1],url: testLessons[1].lessonUrl,id: index+1,));
+              },
+              child: Hero(
+                tag: "lessonCard$index",
+                child: Container(
+                  width: 120,
+                  height: 120,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(24), 
+                      color: blue700.withOpacity(0.5),
+                      image: DecorationImage(
+                        image: AssetImage(_returnPath()),
+                        opacity: 1
+                      )
+                      ),
+                ),
+              ),
             ),
           ],
         ),
