@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     // ignore: missing_enum_constant_in_switch
     switch (defaultTargetPlatform) {
@@ -40,6 +37,15 @@ class DefaultFirebaseOptions {
     );
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyAUg4rRW5SJw7g63X1shegy_XTwbrwSqes',
+    appId: '1:1024299762281:web:ae7fa380a32d2e8a9418f8',
+    messagingSenderId: '1024299762281',
+    projectId: 'hackhaton-2517d',
+    authDomain: 'hackhaton-2517d.firebaseapp.com',
+    storageBucket: 'hackhaton-2517d.appspot.com',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBkSGOVO95V3hDYsr4oK_IhoS2tptLe7Xo',
     appId: '1:1024299762281:android:50e6375068acacd99418f8',
@@ -50,11 +56,11 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDlw9gsEI5FzuKsQ6cBbHw5lc0axUU1IUU',
-    appId: '1:1024299762281:ios:8ac767e059093d999418f8',
+    appId: '1:1024299762281:ios:d548bee2b45509049418f8',
     messagingSenderId: '1024299762281',
     projectId: 'hackhaton-2517d',
     storageBucket: 'hackhaton-2517d.appspot.com',
-    iosClientId: '1024299762281-5htof91mv63fm6gmm9qeq5h7hmf85jo8.apps.googleusercontent.com',
-    iosBundleId: 'com.example.flutterhack',
+    iosClientId: '1024299762281-i1ne2fmgq107clhif75tsppb42imagcv.apps.googleusercontent.com',
+    iosBundleId: 'com.example.flutter_app',
   );
 }
