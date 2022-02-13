@@ -40,16 +40,16 @@ class CustomBottomBar extends StatelessWidget {
       onTap: (index){
         switch (index) {
               case 0:
-                Get.off(()=>HomePage(),fullscreenDialog: true);
+                Get.off(()=>HomePage(),fullscreenDialog: true,transition: Transition.fadeIn);
                 break;
               case 1:
-                Get.to(()=>LessonAndQuestionPage(),fullscreenDialog: true);
+                Get.to(()=>LessonAndQuestionPage(),fullscreenDialog: true,transition: Transition.fadeIn);
                 break;
               case 2:
-                Get.to(()=>QuestionsPage(),fullscreenDialog: true);
+                Get.to(()=>QuestionsPage(),fullscreenDialog: true,transition: Transition.fadeIn);
                 break;
               case 3:
-                Get.to(()=>ProfilePage(),fullscreenDialog: true);
+                Get.to(()=>ProfilePage(),fullscreenDialog: true,transition: Transition.fadeIn);
                 break;
               
               default:

@@ -23,7 +23,7 @@ class _LessonAndQuestionPageState extends State<LessonAndQuestionPage> {
           children: [
             const SizedBox(height: 48,),
             const ChoseLessonOrTestCard(),
-            const SizedBox(height: 32,),
+            const SizedBox(height: 24,),
             Wrap(
               children: List.generate(6, (index) => LessonCard(index: index+1)),
             )

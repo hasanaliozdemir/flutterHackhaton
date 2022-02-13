@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../core/colors.dart';
 
@@ -16,8 +17,8 @@ class SenQuestionCard extends StatelessWidget {
           color: blue600.withOpacity(0.6)),
       child: Center(
         child: Container(
-          height: 100,
-          width: 280,
+          height: 140,
+          width: 320,
           decoration: BoxDecoration(
               color: white.withOpacity(0.7),
               borderRadius: BorderRadius.circular(16)),
@@ -25,17 +26,23 @@ class SenQuestionCard extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(CupertinoIcons.question_circle,
-                    color: blue500, size: 32),
                 const SizedBox(
                   width: 8,
                 ),
-                Text(
-                  "Sorunu Gönder",
-                  style: TextStyle(
-                      color: blue500,
-                      fontSize: 30,
-                      fontWeight: FontWeight.w500),
+                Row(
+                  children: [
+                    Text(
+                      "Sorunu Gönder",
+                      style: TextStyle(
+                          color: blue500,
+                          fontSize: 30,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    SizedBox(
+                      height: 80,
+                      width: 80,
+                      child: Lottie.asset("assets/lottie/question.json"))
+                  ],
                 ),
               ],
             ),

@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/core/colors.dart';
 import 'package:flutter_app/core/components/bottom_bar.dart';
+import 'package:flutter_app/view/questionsPage/send_question.dart';
 import 'package:flutter_app/view/questionsPage/testQuestionsData.dart';
+import 'package:get/route_manager.dart';
 
 class QuestionsPage extends StatefulWidget {
   QuestionsPage({Key? key}) : super(key: key);
@@ -25,27 +27,32 @@ class _QuestionsPageState extends State<QuestionsPage> {
                 SizedBox(
                   height: 80,
                 ),
-                Container(
-                  height: 80,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(24), color: blue500),
-                  child: Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Soru Gönder",
-                          style: TextStyle(fontSize: 32, color: white),
-                        ),
-                        SizedBox(
-                          width: 16,
-                        ),
-                        Icon(
-                          CupertinoIcons.paperplane_fill,
-                          size: 32,
-                          color: white,
-                        )
-                      ],
+                GestureDetector(
+                  onTap: (){
+                    Get.to(()=>SendQuestionPage());
+                  },
+                  child: Container(
+                    height: 80,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(24), color: blue500),
+                    child: Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Soru Gönder",
+                            style: TextStyle(fontSize: 32, color: white),
+                          ),
+                          SizedBox(
+                            width: 16,
+                          ),
+                          Icon(
+                            CupertinoIcons.paperplane_fill,
+                            size: 32,
+                            color: white,
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -91,18 +98,22 @@ class _QuestionsPageState extends State<QuestionsPage> {
                 ),
               ],
             ),
-            child: ListView.builder(itemCount: testQuestions.length, itemBuilder: (context,index){
-              return Container(
-                decoration: BoxDecoration(
-                  border: Border(bottom: BorderSide(color: gray500))
-                ),
-                child: ListTile(
-                  title: Text(testQuestions[index].category),
-                  subtitle: Text(testQuestions[index].date.toString()),
-                  trailing: (testQuestions[index].solved)? Icon(CupertinoIcons.check_mark_circled,color: Colors.green,) : Icon(CupertinoIcons.multiply_circle,color: Colors.red ,)
-                ),
-              );
-            },),
+            child: MediaQuery.removePadding(
+              context: context,
+              removeTop: true,
+              child: ListView.builder(itemCount: testQuestions.length, itemBuilder: (context,index){
+                return Container(
+                  decoration: BoxDecoration(
+                    border: Border(bottom: BorderSide(color: gray500))
+                  ),
+                  child: ListTile(
+                    title: Text(testQuestions[index].category),
+                    subtitle: Text(testQuestions[index].date.toString()),
+                    trailing: (testQuestions[index].solved)? Icon(CupertinoIcons.check_mark_circled,color: Colors.green,) : Icon(CupertinoIcons.multiply_circle,color: Colors.red ,)
+                  ),
+                );
+              },),
+            ),
           )
         ],
       ),

@@ -19,7 +19,7 @@ class TargetQuestionCard extends StatelessWidget {
       height: 144,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        color: blue700.withOpacity(0.6),
+        color: blue400.withOpacity(0.6),
       ),
       padding: EdgeInsets.all(16),
       child: Row(
@@ -55,8 +55,9 @@ class TargetQuestionCard extends StatelessWidget {
               radius: 40,
               lineWidth: 13,
               percent: solved/target,
-              center: Text("${solved/target*100}%",style: TextStyle(fontSize: 16),),
-          progressColor: Colors.green,
+              center: Text("${solved/target*100}%",style: TextStyle(fontSize: 16,color: white),),
+          progressColor: white,
+          backgroundColor: white.withOpacity(0.2),
             ),
           ),
         ],

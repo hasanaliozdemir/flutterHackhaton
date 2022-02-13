@@ -13,7 +13,7 @@ class ChoseQuestonOrLesson extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          color: blue400.withOpacity(0.6)),
+          color: blue700.withOpacity(0.6)),
       height: 120,
       child: Row(
         children: [

@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/colors.dart';
@@ -12,35 +13,31 @@ class ChoseLessonOrTestCard extends StatelessWidget {
     return Container(
       height: 80,
       decoration: BoxDecoration(
-        color: blue500.withOpacity(0.5),
+        //color: blue500.withOpacity(0.5),
         borderRadius: BorderRadius.circular(16),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: 120,
+            width: 350,
             height: 40,
             decoration: BoxDecoration(
-              color: white.withOpacity(0.5),
+              color: white.withOpacity(0),
               borderRadius: BorderRadius.circular(16)
             ),
-            child: Center(child: Text("Soru Çöz",style: TextStyle(
-              color: blue500
-            ),)),
-          ),
-          const SizedBox(width: 32,),
-          Container(
-            width: 120,
-            height: 40,
-            decoration: BoxDecoration(
-              color: white.withOpacity(0.5),
-              borderRadius: BorderRadius.circular(16)
+            child: Align(
+              alignment: Alignment.topCenter,
+
+              child: AnimatedTextKit(animatedTexts: [
+            WavyAnimatedText("Soru Çöz ve Konu Dinle",textStyle: TextStyle(
+                color: blue500,
+                fontSize: 30,
+              ),)
+          ] )
             ),
-            child: Center(child: Text("Konu Dinle",style: TextStyle(
-              color: blue500
-            ),)),
           ),
+          
         ],
       ),
     );
