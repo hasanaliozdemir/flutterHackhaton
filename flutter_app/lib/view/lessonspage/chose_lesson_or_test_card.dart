@@ -21,23 +21,23 @@ class ChoseLessonOrTestCard extends StatelessWidget {
         children: [
           Container(
             width: 350,
-            height: 40,
+            height: 70,
             decoration: BoxDecoration(
-              color: white.withOpacity(0),
-              borderRadius: BorderRadius.circular(16)
-            ),
+                color: white.withOpacity(0),
+                borderRadius: BorderRadius.circular(16)),
             child: Align(
-              alignment: Alignment.topCenter,
-
-              child: AnimatedTextKit(animatedTexts: [
-            WavyAnimatedText("Soru Çöz ve Konu Dinle",textStyle: TextStyle(
-                color: blue500,
-                fontSize: 30,
-              ),)
-          ] )
-            ),
+                alignment: Alignment.topCenter,
+                child: TextLiquidFill(
+                  text: "Soru Çöz ve Konu Öğren",
+                  waveColor: blue400,
+                  boxBackgroundColor: white,
+                  textStyle: const TextStyle(
+                    fontSize: 31.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  boxHeight: 70.0,
+                )),
           ),
-          
         ],
       ),
     );
