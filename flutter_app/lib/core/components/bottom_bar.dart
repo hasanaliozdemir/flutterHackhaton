@@ -24,7 +24,7 @@ class CustomBottomBar extends StatelessWidget {
       backgroundColor: blue200.withOpacity(0.1),
       items: const [
         BottomNavigationBarItem(
-          label: "Home",
+          label: "Ana Sayfa",
           icon: Icon(Icons.home_outlined)
         ),
         BottomNavigationBarItem(
@@ -36,7 +36,7 @@ class CustomBottomBar extends StatelessWidget {
           icon: Icon(CupertinoIcons.question)
         ),
         BottomNavigationBarItem(
-          label: "Profile",
+          label: "Profil",
           icon: Icon(Icons.person)
         ),
       ],
