@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_app/core/colors.dart';
 import 'package:flutter_app/view/homepage/homepage.dart';
 import 'package:flutter_app/view/lessonspage/lessons_page.dart';
 import 'package:flutter_app/view/profile/profile_page.dart';
@@ -14,11 +15,13 @@ class CustomBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
-      selectedItemColor: Colors.yellowAccent,
-      unselectedItemColor: Colors.white,
+      
+      currentIndex: index,
+      selectedItemColor: blue700,
+      unselectedItemColor: blue200.withOpacity(0.6),
       type: BottomNavigationBarType.fixed,
-      elevation: 3,
-      backgroundColor: Colors.deepPurpleAccent,
+      elevation: 300,
+      backgroundColor: blue200.withOpacity(0.1),
       items: const [
         BottomNavigationBarItem(
           label: "Home",
