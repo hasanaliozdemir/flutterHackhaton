@@ -31,17 +31,31 @@ class TargetQuestionCard extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    const Text("Çözülen Soru",style: TextStyle(fontSize: 24,color: Colors.white),),
+                    const Text(
+                      "Çözülen Soru",
+                      style: TextStyle(fontSize: 24, color: Colors.white),
+                    ),
                     const Spacer(),
-                    Text("$solved",style: const TextStyle(fontSize: 24,color: Colors.white),),
+                    Text(
+                      "$solved",
+                      style: const TextStyle(fontSize: 24, color: Colors.white),
+                    ),
                   ],
                 ),
-                SizedBox(height: 8,),
+                SizedBox(
+                  height: 8,
+                ),
                 Row(
                   children: [
-                    const Text("Hedef Soru",style: TextStyle(fontSize: 24,color: Colors.white),),
+                    const Text(
+                      "Hedef Soru",
+                      style: TextStyle(fontSize: 24, color: Colors.white),
+                    ),
                     const Spacer(),
-                    Text("$target",style: const TextStyle(fontSize: 24,color: Colors.white),),
+                    Text(
+                      "$target",
+                      style: const TextStyle(fontSize: 24, color: Colors.white),
+                    ),
                   ],
                 )
               ],
@@ -54,10 +68,15 @@ class TargetQuestionCard extends StatelessWidget {
             child: CircularPercentIndicator(
               radius: 40,
               lineWidth: 13,
-              percent: solved/target,
-              center: Text("${(solved/target*100).round()}%",style: TextStyle(fontSize: 16,color: white),),
-          progressColor: white,
-          backgroundColor: white.withOpacity(0.2),
+              percent: solved / target,
+              center: Text(
+                "${(solved / target * 100).round()}%",
+                style: TextStyle(fontSize: 16, color: white),
+              ),
+              progressColor: white,
+              backgroundColor: white.withOpacity(0.2),
+              animation: true,
+              animationDuration: 2000,
             ),
           ),
         ],
