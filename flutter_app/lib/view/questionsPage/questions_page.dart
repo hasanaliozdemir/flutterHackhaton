@@ -109,7 +109,7 @@ class _QuestionsPageState extends State<QuestionsPage> {
                   child: ListTile(
                     title: Text(testQuestions[index].category),
                     subtitle: Text(testQuestions[index].date.toString()),
-                    trailing: (testQuestions[index].solved)? Icon(CupertinoIcons.check_mark_circled,color: Colors.green,) : Icon(CupertinoIcons.multiply_circle,color: Colors.red ,)
+                    trailing: (testQuestions[index].solved)? Icon(CupertinoIcons.check_mark_circled,color: Colors.green,) : Icon(CupertinoIcons.clock,color: Colors.brown ,)
                   ),
                 );
               },),
