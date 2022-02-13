@@ -18,7 +18,7 @@ class WelcomeCard extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
-          color: blue700.withOpacity(0.4)),
+          color: blue400.withOpacity(0.6)),
       height: 100,
       child: Padding(
         padding: const EdgeInsets.all(16.0),
