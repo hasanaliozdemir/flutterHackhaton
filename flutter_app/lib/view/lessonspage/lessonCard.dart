@@ -71,7 +71,7 @@ _returnPath(){
       case 1:
         return "Matematik";
       case 2:
-        return "Fen";
+        return "Fen Bilimleri";
       case 3:
         return "Türkçe";
       case 4:

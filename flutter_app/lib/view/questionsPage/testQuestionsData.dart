@@ -11,7 +11,7 @@ List<Question> testQuestions = [
     "https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large"
     ),
   Question(
-    "Fen", 
+    "Fen Bilimleri", 
     DateTime.now(), 
     false, 
     "https://pbs.twimg.com/media/Eu7m692XIAEvxxP?format=png&name=large", 
