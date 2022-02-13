@@ -1,6 +1,6 @@
 # flutterHackhaton
 
-Hasan Alpay # Code Pantolon 
+Hasan&Alpay   # Code Pantolon 
 
 Targets:
   IOS: 13.0
