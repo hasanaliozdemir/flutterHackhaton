@@ -1,8 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/core/colors.dart';
 import 'package:flutter_app/core/components/bottom_bar.dart';
 
 import 'package:flutter_app/view/profile/categorysTest.dart';
+import 'package:flutter_app/view/profile/profile_statistics_card.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 
 import 'missing_lessons_widget.dart';
@@ -41,8 +43,8 @@ class _ProfilePageState extends State<ProfilePage> {
                 height: 208,
                 child: Row(
                   children: [
-                    Container(
-                      width: 250,
+                    SizedBox(
+                      width: 170,
                       child: Padding(
                         padding: const EdgeInsets.all(16.0),
                         child: Column(
@@ -69,6 +71,30 @@ class _ProfilePageState extends State<ProfilePage> {
                         ),
                       ),
                     ),
+                    Container(
+                      width: 100,
+                      child: Center(
+                        child: Container(
+                          padding: EdgeInsets.all(4),
+                          decoration: BoxDecoration(
+                            color: white.withOpacity(0.3),
+                            borderRadius: BorderRadius.circular(16)
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(CupertinoIcons.circle_grid_hex,size: 20,color: Colors.yellowAccent,),
+                              SizedBox(width: 4,),
+                              Text("100",style: TextStyle(
+                                color: white,
+                                fontSize: 20
+                              ),)
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
                     const Spacer(),
                     _buildDash(),
                   ],
@@ -77,9 +103,9 @@ class _ProfilePageState extends State<ProfilePage> {
               const SizedBox(
                 height: 24,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: _buildStatistics(),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0),
+                child: ProfileStatisticsCard(),
               ),
               const SizedBox(
                 height: 24,
@@ -109,54 +135,6 @@ class _ProfilePageState extends State<ProfilePage> {
         ));
   }
 
-  Container _buildStatistics() {
-    return Container(
-      height: 300,
-      child: Column(
-        children: [
-          Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                "Konu İlerlemelerin",
-                style: TextStyle(color: blue500, fontSize: 24),
-              )),
-          const SizedBox(
-            height: 8,
-          ),
-          Wrap(
-            children: List.generate(6, (index) {
-              return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 110,
-                  width: 100,
-                  child: CircularPercentIndicator(
-                    header: Padding(
-                      padding: const EdgeInsets.only(bottom: 8.0),
-                      child: Text(
-                        testCategories[index].name,
-                        style: TextStyle(color: blue900),
-                      ),
-                    ),
-                    radius: 40,
-                    percent: testCategories[index].percent,
-                    animationDuration: 2000,
-                    lineWidth: 13,
-                    animation: true,
-                    progressColor: blue200,
-                    backgroundColor: blue200.withOpacity(0.2),
-                    circularStrokeCap: CircularStrokeCap.square,
-                    center: Text(
-                        "%${(testCategories[index].percent * 100).round()}"),
-                  ),
-                ),
-              );
-            }),
-          )
-        ],
-      ),
-    );
-  }
 
   Widget _buildDash() {
     return Align(
@@ -171,3 +149,4 @@ class _ProfilePageState extends State<ProfilePage> {
     );
   }
 }
+

@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/view/profile/missinglessons.dart';
 import 'package:get/route_manager.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../core/colors.dart';
 import '../../core/components/butonMini.dart';
@@ -42,7 +43,7 @@ class MissingLessonsWidget extends StatelessWidget {
                     trailing: IconButton(
                       icon: const Icon(CupertinoIcons.arrow_right),
                       onPressed: (){
-                        print(testLessons[index].lessonUrl);
+                        _launchURL(testLessons[index].lessonUrl);
                       },
                     )
                   ),
@@ -54,6 +55,9 @@ class MissingLessonsWidget extends StatelessWidget {
       ),
     );
   }
+  void _launchURL(url) async {
+  if (!await launch(url)) throw 'Could not launch $url';
+}
 }
 
 buildSignOut(){
