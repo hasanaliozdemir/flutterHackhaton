@@ -20,9 +20,10 @@ class ChoseLessonOrTestCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
+            height: 400,
             width: 350,
             decoration: BoxDecoration(
-                color: white.withOpacity(1),
+                color: Colors.transparent,
                 boxShadow: const [
                 BoxShadow(
                   color: Color(0x3f000000),
@@ -30,7 +31,9 @@ class ChoseLessonOrTestCard extends StatelessWidget {
                   offset: Offset(0, 4),
                 ),
               ],
-                borderRadius: BorderRadius.circular(16)),
+                borderRadius: BorderRadius.circular(16),
+                
+                ),
             child: Align(
                 alignment: Alignment.topCenter,
                 child: TextLiquidFill(
@@ -42,7 +45,7 @@ class ChoseLessonOrTestCard extends StatelessWidget {
                     fontSize: 28.0,
                     fontWeight: FontWeight.bold,
                   ),
-                  boxHeight: 70.0,
+                  boxHeight: 60.0,
                   waveDuration: Duration(seconds: 1),
                   loadUntil: 1,
                 )),

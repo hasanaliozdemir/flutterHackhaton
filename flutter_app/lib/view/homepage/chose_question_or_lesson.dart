@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_app/view/testPages/chose_lesson.dart';
+import 'package:get/route_manager.dart';
 
 import '../../core/colors.dart';
 
@@ -17,22 +19,27 @@ class ChoseQuestonOrLesson extends StatelessWidget {
       height: 120,
       child: Row(
         children: [
-          Container(
-            decoration: BoxDecoration(
-                color: white.withOpacity(0.4),
-                borderRadius: BorderRadius.circular(8)),
-            width: 144,
-            child: Center(
-              child: Row(
-                children: [SizedBox(width: 8,),
-                  Icon(CupertinoIcons.pencil_ellipsis_rectangle,color: white,size: 20,),
-                  SizedBox(width: 8,),
-                  Text("Soru Çöz",style: TextStyle(
-                    color: white,
-                    fontWeight: FontWeight.w600,
-                    fontSize: 20
-                  ),),
-                ],
+          GestureDetector(
+            onTap: () {
+              Get.to(()=>ChooseLesson());
+            },
+            child: Container(
+              decoration: BoxDecoration(
+                  color: white.withOpacity(0.4),
+                  borderRadius: BorderRadius.circular(8)),
+              width: 144,
+              child: Center(
+                child: Row(
+                  children: [SizedBox(width: 8,),
+                    Icon(CupertinoIcons.pencil_ellipsis_rectangle,color: white,size: 20,),
+                    SizedBox(width: 8,),
+                    Text("Soru Çöz",style: TextStyle(
+                      color: white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 20
+                    ),),
+                  ],
+                ),
               ),
             ),
           ),
