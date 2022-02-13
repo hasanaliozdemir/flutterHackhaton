@@ -41,7 +41,7 @@ class SenQuestionCard extends StatelessWidget {
                     SizedBox(
                       height: 80,
                       width: 80,
-                      child: Lottie.asset("assets/lottie/question.json"))
+                      child: Lottie.asset("assets/lottie/lt2.json"))
                   ],
                 ),
               ],
