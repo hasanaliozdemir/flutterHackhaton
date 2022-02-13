@@ -7,7 +7,7 @@ Targets:
   Android: API 30
   
 
-To run
+To run:
 
 cd flutter_app
 flutter pub get
