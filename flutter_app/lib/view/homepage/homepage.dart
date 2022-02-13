@@ -32,7 +32,14 @@ class _HomePageState extends State<HomePage> {
               fit: BoxFit.cover
             )),
           ),
+          
           Padding(padding: const EdgeInsets.all(16), child: _buildBody()),
+          Positioned(child: SizedBox(
+            height: 150,
+            child: Image.asset("assets/dash02.png")),
+            left: -35,
+            top: -10, 
+            ),
         ],
       ),
       bottomNavigationBar: const CustomBottomBar(index: 0),
